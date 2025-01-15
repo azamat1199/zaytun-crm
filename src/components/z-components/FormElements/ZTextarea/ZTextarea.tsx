@@ -21,7 +21,6 @@ type FormInputRef = React.ComponentPropsWithRef<"textarea">["ref"];
  * @component
  *
  * @example
- * // Basic usage
  * <ZTextarea />
  *
  * // With label, helper text, and custom end icon
