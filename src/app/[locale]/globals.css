@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "@/components/z-components/FormElements/ZDatePicker/ZDatePicker.styles.css":
+    root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
+}
+
+* {
+    font-family: "Inter", "system-ui", sans-serif !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #000000;
+    background: linear-gradient(
+            to bottom,
+            transparent,
+            rgb(var(--background-end-rgb))
+        )
+        rgb(var(--background-start-rgb));
+}
+
+.w-vw-100 {
+    width: 100vw;
+}
+.h-vh-100 {
+    height: 100vh;
+}
+
+.sidebar-submenu-item {
+    position: relative;
+    list-style: none;
+    z-index: 10;
+}
+.sidebar-submenu-item a {
+    transition: 0.3s ease;
+}
+
+.sidebar-submenu-item:hover a {
+    background-color: #f6f6f6;
+}
+
+.sidebar-submenu-item:not(.without-after)::after {
+    content: "";
+    position: absolute;
+    z-index: 5;
+    pointer-events: none;
+    width: 100%;
+    height: 150%;
+    top: -100%;
+    left: -13px;
+    border-bottom-left-radius: 8px;
+    border-left: 2px solid #f6f6f6;
+    border-bottom: 2px solid #f6f6f6;
+}
+/* .custom-toast{
+  box-shadow: 10px 10px 10px 10px red !important
+} */
+.custom-toast .Toastify__toast-icon {
+    display: none;
+}
+
+.custom-toast.Toastify__toast {
+    border-radius: 12px !important;
+    box-shadow:
+        0px 8px 8px -4px rgba(16, 24, 40, 0.03),
+        0px 20px 24px -4px rgba(16, 24, 40, 0.08);
+}
+
+.custom-toast .Toastify__close-button {
+    display: none;
+}
+
+.content-layout-wrapper::-webkit-scrollbar {
+    width: 8px; /* Width of vertical scrollbar */
+}
+
+/* Handle (thumb) of scrollbar */
+.content-layout-wrapper::-webkit-scrollbar-thumb {
+    background: #ccc; /* Color of the scrollbar thumb */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Handle on hover */
+.content-layout-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #888; /* Color on hover */
+}
+
+/* Track (background) of scrollbar */
+.content-layout-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of scrollbar track */
+}
+*::-webkit-scrollbar {
+    width: 5px; /* Width of vertical scrollbar */
+    height: 5px; /* Width of horizontal scrollbar */
+}
+*::-webkit-scrollbar-thumb {
+    background: #ccc; /* Color of the scrollbar thumb */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+    background: #888; /* Color on hover */
+}
+
+/* Track (background) of scrollbar */
+*::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of scrollbar track */
+}
+.table_three-root {
+    box-shadow:
+        0 1px 2px 0 rgba(16, 24, 40, 0.06),
+        0 1px 3px 0 rgba(16, 24, 40, 0.1);
+}
+
+.table_three-row {
+    transition: 0.25s ease;
+}
+
+.table_three-row:hover {
+    background-color: #fffcf5;
+}
+
+.my-custom-tab > div {
+    padding: 0;
+    gap: 1px;
+    overflow: hidden;
+    background-color: #d0d5dd;
+    padding: 1px;
+    border-radius: 8px;
+}
+
+.my-custom-tab [data-slot="cursor"] {
+    border-radius: 0px;
+    background-color: #039855;
+}
+
+.my-custom-tab .tab-item:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+.my-custom-tab .tab-item:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+.my-custom-tab .tab-item[data-selected="true"] [data-slot="tabContent"] {
+    color: #fff;
+    line-height: 20px;
+    text-transform: capitalize;
+}
+
+.polar-chart-content {
+    box-shadow:
+        rgba(14, 30, 37, 0.12) 0px -9px 21px 0px,
+        rgba(14, 30, 37, 0.32) 0px 9px 16px 0px;
+}
+
+.polar-chart-content-bg {
+    box-shadow:
+        #fff 5px -25px 16px 1px inset,
+        #fff -5px 32px 16px 1px inset;
+}
+
+.sidebar-menu::-webkit-scrollbar {
+    width: 0px;
+}
+
+.sidebar-menu {
+    scrollbar-width: none;
+    overflow-x: hidden;
+}
+
+.rounded-r-full,
+.rounded-l-full {
+    border-radius: 50% !important;
+}
+.grid.grid-cols-7.my-1 .bg-green-100 {
+    background: #ecfdf3;
+}
+.tracking-wide > .whitespace-nowrap {
+    color: #344054 !important;
+    font-weight: 400;
+}
+.tracking-wide > .whitespace-nowrap:hover {
+    color: #027a48 !important;
+    background: #ecfdf3 !important;
+}
+
+.react-time-picker__inputGroup__input {
+    width: 50px;
+}
+/*.react-time-picker__inputGroup__hour{*/
+/*  width: 40px !important;*/
+
+/*}*/
+/*.react-time-picker__inputGroup__minute {*/
+/*  width: 40px !important;*/
+
+.react-time-picker__inputGroup__divider {
+    margin-right: 10px !important;
+}
+.react-time-picker__wrapper {
+    border: 1px solid #d0d5dd !important;
+    padding: 5px 8px;
+    border-radius: 8px;
+}
+.react-time-picker__clear-button {
+    color: #d0d5dd !important;
+}
+.react-time-picker__inputGroup__amPm option:hover {
+    background: #027a48 !important;
+}
+
+.hidden-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.time-picker-container .react-time-picker__clock {
+    z-index: 9;
+}
+
+@layer components {
+    .layout-content {
+        @apply flex flex-grow flex-shrink overflow-y-auto bg-block;
+    }
+
+    .dashboard-diagrams-block {
+        @apply flex max-w-[50%] flex-1 flex-col gap-[26px] p-[20px] border rounded-[8px];
+    }
+    .dashboard-bar-chart-wrapper {
+        @apply flex-1 max-h-[255px] overflow-x-auto min-h-[255px] h-full;
+    }
+    .dashboard-line-chart-wrapper {
+        @apply flex-1 border-2 border-[#D0D5DD] flex flex-col rounded-[8px] p-[15px] gap-[15px];
+    }
+    .dashboard-add-widget {
+        @apply flex-1 border  gap-[10px] rounded-[8px] flex flex-col justify-center items-center;
+    }
+    .dashboard-add-icon-wrap {
+        @apply w-[48px] h-[48px] flex justify-center items-center rounded-[50%] bg-[#EDFFEA];
+    }
+    .wrapper {
+        @apply flex-1 flex flex-col gap-[8px] p-[30px] overflow-y-auto;
+    }
+    .h-text-h2-medium {
+        @apply text-[32px] font-[500] text-c_neutral-800 leading-[40px] tracking-[-0.64px];
+    }
+    .s-text-pretitle-semibold {
+        @apply text-[18px] font-semibold  text-c_neutral-800 leading-[26px];
+    }
+}
+
+.Toastify__toast-container {
+    width: 440px !important;
+}
+
+input::placeholder {
+    opacity: 1 !important;
+}

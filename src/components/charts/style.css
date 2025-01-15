@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+    .polar-area {
+        @apply flex-1 w-full h-full bg-block max-h-[255px] max-w-[255px] overflow-x-auto min-h-[255px] h-full relative;
+    }
+    .polar-area-info {
+        @apply overflow-hidden absolute w-[160px] h-[160px]  flex justify-center items-center top-[50%] left-[50%] bg-white translate-x-[-50%] translate-y-[-50%] rounded-[50%];
+    }
+    .polar-area-info-block-bg {
+        @apply border-[6px] border-[#eae6fe] rounded-[50%] w-[135px] h-[135px];
+    }
+    .polar-area-info-block-content {
+        @apply absolute w-full h-full flex flex-col justify-center items-center top-0 left-0  rounded-[50%];
+    }
+}

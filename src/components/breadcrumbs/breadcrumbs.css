@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+    .breadcrumbs-link {
+        @apply text-gray-500 capitalize bg-gray-400 font-medium  rounded-lg px-[9px] py-[2px];
+    }
+}

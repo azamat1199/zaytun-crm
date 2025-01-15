@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+    .table-wrapper {
+        @apply px-4 border-0 border-b py-3 flex items-center justify-between gap-3;
+    }
+    .table-val-header-row {
+        @apply grid border border-b-0 border-x-gray-200 grid-cols-8 rounded-t-xl;
+    }
+    .table-val-body-row {
+        @apply grid border-t  leading-5 border-gray-200 grid-cols-2 pt-[9px] pb-[8px];
+    }
+    .table-val-header-item {
+        @apply grid border-r border-b-0 border-gray-200 col-start-1 text-gray-700 font-medium text-[16px] py-4 col-span-1;
+    }
+    .table-val-body-item {
+        @apply text-center flex items-center w-40 pl-8  text-secondary text-[12px];
+    }
+    .table-val-body {
+        @apply grid grid-cols-8 border border-t-0 rounded-b-[8px] border-gray-200;
+    }
+    .tabs-item {
+        @apply border-r select-none last:!border-r-0 font-medium cursor-pointer relative bg-block px-4 py-[10px] text-gray-700 text-[14px];
+    }
+    .table-top-header-wrapper {
+        @apply grid grid-cols-8 border border-b-0 border-x-gray-200;
+    }
+    .table-top-header {
+        @apply border-r border-b-0 border-gray-200 text-gray-700 font-medium text-[16px] py-4;
+    }
+    .table-header {
+        @apply text-center font-medium text-secondary text-[12px];
+    }
+    .table-currency-data {
+        @apply grid border-t leading-5 border-gray-200 grid-cols-2 pt-[9px] pb-[8px];
+    }
+    .table-data {
+        @apply text-center text-secondary text-[12px];
+    }
+    .table-row {
+        @apply grid grid-cols-3 py-4 border-t border-gray-200 leading-5;
+    }
+    .table-wrapper-data {
+        @apply border-r border-gray-200;
+    }
+
+    .simple-table-header-item {
+        @apply text-left text-secondary font-medium px-6 py-3 text-[12px];
+    }
+
+    .filter-modal-label {
+        @apply text-black text-[16px] mb-[10px] font-semibold;
+    }
+
+    .loading-header {
+        @apply h-4 bg-gray-200 rounded-[20px]  my-4 mx-2;
+    }
+    .loading-body {
+        @apply h-6 bg-gray-200  rounded-[20px] w-full my-4 mx-2;
+    }
+    .table-filter-items-container {
+        @apply flex items-center justify-between gap-[30px];
+    }
+    .pagination-selector-container {
+        @apply absolute border-2 rounded-[8px] bottom-[25px] left-[-10px] max-h-40 overflow-y-auto  bg-[#ffffff];
+    }
+    .pagination-selector-item {
+        @apply py-1 px-4 flex items-center hover:bg-[#eeeeee];
+    }
+    .three-dots-actions-container {
+        @apply p-2 rounded-[8px] border-[1px] absolute right-10 bg-[#ffffff] w-[180px];
+    }
+    .three-dots-actions-item {
+        @apply rounded-[8px] py-[10px] px-4 hover:bg-[#F9FAFB] cursor-pointer;
+    }
+}

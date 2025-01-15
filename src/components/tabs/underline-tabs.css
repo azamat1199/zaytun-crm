@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+    .underline-tabs-header {
+        @apply !rounded-none border-0 text-sm !bg-transparent w-auto gap-[20px];
+    }
+    .underline-tabs-header-indicator {
+        @apply !bg-transparent border-b-2 text-sm !shadow-none !rounded-none;
+    }
+}

@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+    .autocomplate-select {
+        @apply border-[#D0D5DD] relative w-full py-[6px] px-2 flex items-center justify-center cursor-pointer flex-col;
+    }
+    .search-input-container {
+        @apply flex-1 h-full text-blue-gray-900 font-[400] outline-none;
+    }
+    .avatar-wrapper {
+        @apply w-[25px] h-[25px] flex items-center justify-center;
+    }
+    .option-list-wrapper {
+        @apply absolute border-[#D0D5DD] w-full bg-[#fff] top-[37px] rounded-b-[8px] overflow-y-auto overflow-hidden max-h-[200px] z-30;
+    }
+    .option-list-item {
+        @apply w-full flex items-center gap-[8px] px-[14px] py-[10px] hover:bg-blue-50;
+    }
+    .option-text {
+        @apply text-blue-gray-900 font-[400] flex-1;
+    }
+}

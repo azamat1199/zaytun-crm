@@ -1,0 +1,50 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ZTextField tests > renders correctly 1`] = `
+<div
+  class=""
+  id="firstName"
+  role="group"
+>
+  <label
+    class="font-medium mb-[6px] text-b-2-m"
+  >
+    Something
+  </label>
+  <div
+    class="relative flex items-center"
+  >
+    <div
+      class="absolute left-2.5 top-2/4 -translate-y-2/4"
+      role="presentation"
+    >
+      <svg
+        class=""
+        fill="none"
+        height="12"
+        viewBox="0 0 12 12"
+        width="12"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.5 10.5L8.325 8.325M9.5 5.5C9.5 7.70914 7.70914 9.5 5.5 9.5C3.29086 9.5 1.5 7.70914 1.5 5.5C1.5 3.29086 3.29086 1.5 5.5 1.5C7.70914 1.5 9.5 3.29086 9.5 5.5Z"
+          stroke="#101828"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </div>
+    <input
+      class="h-12 bg-white w-full focus:outline-none focus:ring-0 transition-all duration-200 ease-in-out appearance-none outline-none rounded-md border border-c_neutral-300 px-[10px] py-4 text-c_neutral-800 placeholder:font-normal placeholder:text-c_neutral-500 focus:border-c_primary-500 disabled:border-c_neutral-200 disabled:bg-c_neutral-25 disabled:cursor-not-allowed disabled:text-c_neutral-400 [&[readonly]]:border-c_neutral-200 [&[readonly]]:bg-c_neutral-25 [&[readonly]]:text-c_neutral-400 pl-10"
+      helpertext="helpertext"
+      name="firstName"
+      placeholder="placeholder"
+    />
+  </div>
+  <p
+    class="text-c_neutral-500 mt-[6px]"
+  >
+    helpertext
+  </p>
+</div>
+`;

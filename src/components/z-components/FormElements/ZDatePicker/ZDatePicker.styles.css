@@ -1,0 +1,48 @@
+.month-item {
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 500;
+        padding: 10px 10px;
+        text-align: center;
+        align-items: center;
+        color: #f55d5f !important;
+    }
+}
+.month-item-name {
+    border: none !important;
+    width: 135px !important;
+    .custom-select::-ms-expand {
+        display: none !important; /* Hide default arrow for IE/Edge */
+    }
+    outline: none; /* Remove default focus outline */
+    outline-offset: 0 !important;
+}
+
+.month-item-year {
+    border: none !important;
+    outline-color: transparent;
+    width: 80px !important;
+}
+
+.month-item-name:focus {
+    border: none !important;
+    outline: none !important;
+    outline-color: transparent;
+}
+.is-start-date {
+    background: #039855 !important;
+    width: 35px !important;
+    height: 35px !important;
+    border-radius: 50% !important;
+}
+.day-item {
+    padding-top: 9px !important;
+    width: 35px !important;
+    height: 35px !important;
+}
+.day-item:hover {
+    /*outline: none !important;*/
+    border-radius: 50% !important;
+    border-color: #039855 !important;
+}

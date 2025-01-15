@@ -1,0 +1,69 @@
+variables:
+    #  DOCKER_HOST: "tcp://127.0.0.1:2375"
+    #  DOCKER_TLS_CERTDIR: ""
+    #  DOCKER_DRIVER: overlay2
+    DOMAIN_NAME: "dev-internal-api.zaytuntech.uz"
+    EXTERNAL_PORT: "30505"
+
+#after_script:
+#    - echo $CI_PROJECT_DIR | awk -F/ '{print "/home/gitlab-runner/builds/"$2}' | xargs rm -fr
+
+default:
+    tags:
+        - dev
+# before_script:
+#  - apk add --update --no-cache git
+
+##services:
+##  - name: test-dockerhub.zaytuntech.uz/docker:25.0.2-dind
+##    command: [ "--tls=false" ]
+
+#cache:
+#    paths:
+#        - node_modules/
+#        - .yarn
+
+stages:
+    - Push
+    - Deploy
+
+push:
+    stage: Push
+    ##  image: test-dockerhub.zaytuntech.uz/docker:25.0.2
+    before_script:
+        ##    - apk add --update --no-cache git
+        - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    script:
+        #- mkdir -p /home/gitlab-runner/node_modules/$CI_PROJECT_NAME
+        #- rm -fr yarn.lock
+        #- yarn config set registry https://test-nexus3.zaytuntech.uz/repository/zaytuntech-npm/
+        #- yarn install --modules-folder /home/gitlab-runner/node_modules/$CI_PROJECT_NAME
+        #- mkdir node_modules
+        #- rsync -av /home/gitlab-runner/node_modules/$CI_PROJECT_NAME/ node_modules/
+        - yarn install
+        - yarn build
+        - sed -i 's/FROM /FROM test-dockerhub.zaytuntech.uz\//gI' Dockerfile
+        - docker build -t $CI_REGISTRY_IMAGE .
+        - docker push $CI_REGISTRY_IMAGE
+        - docker rmi --force $CI_REGISTRY_IMAGE
+        - docker container prune --force
+    only:
+        refs:
+            - dev
+
+deploy-kubernetes:
+    stage: Deploy
+    needs:
+        - push
+    ##image: test-dockerhub.zaytuntech.uz/curlimages/curl:8.6.0
+    script:
+        ##  - curl -O https://test-nexus3.zaytuntech.uz/repository/zaytuntech-raw/helm/helm
+        ##  - curl -O https://test-nexus3.zaytuntech.uz/repository/zaytuntech-raw/kubectl/kubectl
+        - curl -O https://test-nexus3.zaytuntech.uz/repository/zaytuntech-raw/zaytuntech-helm-chart-billing-cabinet-frontend/zaytuntech-helm-chart-billing-cabinet-frontend.tar
+        - tar xvf zaytuntech-helm-chart-billing-cabinet-frontend.tar
+        - rm -fr zaytuntech-helm-chart-billing-cabinet-frontend.tar
+        ##  - chmod +x helm kubectl
+        - helm upgrade --install $CI_PROJECT_NAME zaytuntech-helm-chart-billing-cabinet-frontend/ --set name=$CI_PROJECT_NAME --set namespace=$CI_PROJECT_ROOT_NAMESPACE --set domainname=$DOMAIN_NAME --set image.repository=$CI_REGISTRY_IMAGE --set service.port=3000 --set service.external_port=$EXTERNAL_PORT --kubeconfig $K8S_CONFIG_FILE_2
+    only:
+        refs:
+            - dev

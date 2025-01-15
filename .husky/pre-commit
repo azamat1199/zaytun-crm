@@ -1,0 +1,4 @@
+npm run "test-unwatch"
+# npm run "format-fix"
+# npm run "type-check"
+npm run "lint-error"

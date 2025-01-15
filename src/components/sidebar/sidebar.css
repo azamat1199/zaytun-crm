@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+    .sidebar {
+        @apply max-w-[256px] bg-block relative border-r-2 rounded-[8px] h-full w-full flex flex-col p-6;
+    }
+    .sidebar-toggle {
+        @apply cursor-pointer w-[28px] h-[28px] flex items-center justify-center rounded-[8px] absolute top-[32px] left-[100%] translate-x-[-50%] bg-white border-2 border-[#F6F6F6];
+    }
+    .sidebar-header {
+        @apply flex overflow-hidden items-center gap-3 font-medium pb-6;
+    }
+    .sidebar-header-full-name {
+        @apply text-secondary whitespace-nowrap uppercase text-[10px];
+    }
+    .sidebar-menu-tw {
+        @apply whitespace-pre max-h-[500px] text-[0.9rem] flex flex-col overflow-auto;
+    }
+    .sidebar-menu-l-item {
+        @apply font-medium py-[10px] px-[12px] flex gap-3 items-center w-full font-inter text-secondary;
+    }
+    .sidebar-menu-list-item {
+        @apply flex items-center  rounded-[8px] cursor-pointer gap-[8px] py-[10px] px-[12px];
+    }
+    .sidebar-menu-list-item-title {
+        @apply flex-1 font-medium capitalize  text-[12px] text-secondary;
+    }
+    .sidebar-menu-list-item-title-link {
+        @apply w-full  relative z-10 inline-block py-2 px-3 rounded-[8px] text-[#757575] capitalize text-[12px];
+    }
+    .sub-menu-collapsed-list-item {
+        @apply flex items-center  rounded-[8px] cursor-pointer gap-[8px] p-0;
+    }
+    .sub-menu-collapsed-list-item-link {
+        @apply outline-0  w-full  relative z-10 inline-block py-2 px-3 rounded-[8px] text-[#757575] capitalize text-[12px];
+    }
+    .sidebar-bottom-links-wrapper {
+        @apply text-sm z-50 font-medium flex flex-col gap-[8px] overflow-hidden;
+    }
+}
